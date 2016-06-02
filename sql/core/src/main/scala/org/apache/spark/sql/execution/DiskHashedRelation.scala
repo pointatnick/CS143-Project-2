@@ -65,6 +65,10 @@ private[sql] class DiskPartition (filename: String, blockSize: Int) {
    */
   def insert(row: Row) = {
     // IMPLEMENT ME
+    // check size
+    // if too big
+      // spillPartitionToDisk();
+    // else add row
   }
 
   /**
@@ -128,6 +132,11 @@ private[sql] class DiskPartition (filename: String, blockSize: Int) {
        */
       private[this] def fetchNextChunk(): Boolean = {
         // IMPLEMENT ME
+        // if iterator empty
+        //    return false
+        // else
+        //    fetch next chunk?
+        //    return true
         false
       }
     }
@@ -143,6 +152,10 @@ private[sql] class DiskPartition (filename: String, blockSize: Int) {
    */
   def closeInput() = {
     // IMPLEMENT ME
+    // if any unwritten data
+    //    write data
+    // closeParition()
+    // close output stream
     inputClosed = true
   }
 
