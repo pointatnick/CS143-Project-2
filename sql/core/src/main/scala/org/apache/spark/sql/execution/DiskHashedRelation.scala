@@ -37,11 +37,14 @@ protected [sql] final class GeneralDiskHashedRelation(partitions: Array[DiskPart
 
   override def getIterator() = {
     // IMPLEMENT ME
-    null
+    partitions.toIterator
   }
 
   override def closeAllPartitions() = {
     // IMPLEMENT ME
+    val pIter: Iterator[DiskPartition] = getIterator()
+    for (i <- pIter)
+      i.closePartition()
   }
 }
 
