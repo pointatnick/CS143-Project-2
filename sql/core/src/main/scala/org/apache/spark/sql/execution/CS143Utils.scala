@@ -106,7 +106,9 @@ object CS143Utils {
    */
   def getUdfFromExpressions(expressions: Seq[Expression]): ScalaUdf = {
     // IMPLEMENT ME
-    null
+    var udf: ScalaUdf = null
+    udf = expressions.collect{case u: ScalaUdf => u}.last
+    return udf
   }
 
   /**
