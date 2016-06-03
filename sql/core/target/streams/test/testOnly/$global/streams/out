@@ -2,20 +2,72 @@
 [0m[[0mdebug[0m] [0mCreate a single-thread test executor[0m
 [0m[[0mdebug[0m] [0mRunner for sbt.FrameworkWrapper produced 0 initial tasks for 0 tests.[0m
 [0m[[0mdebug[0m] [0mRunner for org.scalatest.tools.Framework produced 1 initial tasks for 1 tests.[0m
-[0m[[0mdebug[0m] [0m  Running TaskDef(org.apache.spark.sql.execution.DiskPartitionSuite, sbt.ForkMain$SubclassFingerscan@42d7b8, false, [SuiteSelector])[0m
-[0m[[0minfo[0m] [0m[32mDiskPartitionSuite:[0m[0m
-[0m[[0minfo[0m] [0m[32m- disk partition (792 milliseconds)[0m[0m
-[0m[[0minfo[0m] [0m[32m- close input (3 milliseconds)[0m[0m
+[0m[[0mdebug[0m] [0m  Running TaskDef(org.apache.spark.sql.execution.DiskHashedRelationSuite, sbt.ForkMain$SubclassFingerscan@74252095, false, [SuiteSelector])[0m
+[0m[[0minfo[0m] [0m[32mDiskHashedRelationSuite:[0m[0m
+[0m[[0minfo[0m] [0m[32m- values are in correct partition (336 milliseconds)[0m[0m
+[0m[[0minfo[0m] [0m[31m- empty input *** FAILED *** (196 milliseconds)[0m[0m
+[0m[[0minfo[0m] [0m[31m  partition.getData().hasNext was true (DiskHashedRelationSuite.scala:33)[0m[0m
+[0m[[0minfo[0m] [0m[31m  org.scalatest.exceptions.TestFailedException:[0m[0m
+[0m[[0minfo[0m] [0m[31m  at org.scalatest.Assertions$class.newAssertionFailedException(Assertions.scala:500)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1555)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at org.scalatest.Assertions$AssertionsHelper.macroAssert(Assertions.scala:466)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at org.apache.spark.sql.execution.DiskHashedRelationSuite$$anonfun$2$$anonfun$apply$mcV$sp$2.apply(DiskHashedRelationSuite.scala:33)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at org.apache.spark.sql.execution.DiskHashedRelationSuite$$anonfun$2$$anonfun$apply$mcV$sp$2.apply(DiskHashedRelationSuite.scala:32)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at scala.collection.Iterator$class.foreach(Iterator.scala:727)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at scala.collection.AbstractIterator.foreach(Iterator.scala:1157)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at org.apache.spark.sql.execution.DiskHashedRelationSuite$$anonfun$2.apply$mcV$sp(DiskHashedRelationSuite.scala:32)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at org.apache.spark.sql.execution.DiskHashedRelationSuite$$anonfun$2.apply(DiskHashedRelationSuite.scala:28)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at org.apache.spark.sql.execution.DiskHashedRelationSuite$$anonfun$2.apply(DiskHashedRelationSuite.scala:28)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at org.scalatest.Transformer$$anonfun$apply$1.apply$mcV$sp(Transformer.scala:22)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at org.scalatest.OutcomeOf$class.outcomeOf(OutcomeOf.scala:85)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at org.scalatest.OutcomeOf$.outcomeOf(OutcomeOf.scala:104)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at org.scalatest.Transformer.apply(Transformer.scala:22)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at org.scalatest.Transformer.apply(Transformer.scala:20)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at org.scalatest.FunSuiteLike$$anon$1.apply(FunSuiteLike.scala:166)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at org.scalatest.Suite$class.withFixture(Suite.scala:1122)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at org.scalatest.FunSuite.withFixture(FunSuite.scala:1555)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at org.scalatest.FunSuiteLike$class.invokeWithFixture$1(FunSuiteLike.scala:163)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at org.scalatest.FunSuiteLike$$anonfun$runTest$1.apply(FunSuiteLike.scala:175)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at org.scalatest.FunSuiteLike$$anonfun$runTest$1.apply(FunSuiteLike.scala:175)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at org.scalatest.SuperEngine.runTestImpl(Engine.scala:306)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at org.scalatest.FunSuiteLike$class.runTest(FunSuiteLike.scala:175)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at org.scalatest.FunSuite.runTest(FunSuite.scala:1555)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at org.scalatest.FunSuiteLike$$anonfun$runTests$1.apply(FunSuiteLike.scala:208)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at org.scalatest.FunSuiteLike$$anonfun$runTests$1.apply(FunSuiteLike.scala:208)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at org.scalatest.SuperEngine$$anonfun$traverseSubNodes$1$1.apply(Engine.scala:413)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at org.scalatest.SuperEngine$$anonfun$traverseSubNodes$1$1.apply(Engine.scala:401)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at scala.collection.immutable.List.foreach(List.scala:318)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at org.scalatest.SuperEngine.traverseSubNodes$1(Engine.scala:401)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at org.scalatest.SuperEngine.org$scalatest$SuperEngine$$runTestsInBranch(Engine.scala:396)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at org.scalatest.SuperEngine.runTestsImpl(Engine.scala:483)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at org.scalatest.FunSuiteLike$class.runTests(FunSuiteLike.scala:208)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at org.scalatest.FunSuite.runTests(FunSuite.scala:1555)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at org.scalatest.Suite$class.run(Suite.scala:1424)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at org.scalatest.FunSuite.org$scalatest$FunSuiteLike$$super$run(FunSuite.scala:1555)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at org.scalatest.FunSuiteLike$$anonfun$run$1.apply(FunSuiteLike.scala:212)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at org.scalatest.FunSuiteLike$$anonfun$run$1.apply(FunSuiteLike.scala:212)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at org.scalatest.SuperEngine.runImpl(Engine.scala:545)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at org.scalatest.FunSuiteLike$class.run(FunSuiteLike.scala:212)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at org.scalatest.FunSuite.run(FunSuite.scala:1555)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at org.scalatest.tools.Framework.org$scalatest$tools$Framework$$runSuite(Framework.scala:462)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at org.scalatest.tools.Framework$ScalaTestTask.execute(Framework.scala:671)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at sbt.ForkMain$Run$2.call(ForkMain.java:294)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at sbt.ForkMain$Run$2.call(ForkMain.java:284)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at java.util.concurrent.FutureTask.run(FutureTask.java:266)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at java.lang.Thread.run(Thread.java:745)[0m[0m
 [0m[[0mdebug[0m] [0m    Produced 0 nested tasks and 2 events.[0m
 [0m[[0mdebug[0m] [0mRunner for sbt.FrameworkWrapper produced 0 initial tasks for 0 tests.[0m
 [0m[[0mdebug[0m] [0mSummary for ScalaCheck not available.[0m
 [0m[[0minfo[0m] [0mScalaTest[0m
-[0m[[0minfo[0m] [0m[36mRun completed in 2 seconds, 391 milliseconds.[0m[0m
+[0m[[0minfo[0m] [0m[36mRun completed in 3 seconds, 5 milliseconds.[0m[0m
 [0m[[0minfo[0m] [0m[36mTotal number of tests run: 2[0m[0m
 [0m[[0minfo[0m] [0m[36mSuites: completed 1, aborted 0[0m[0m
-[0m[[0minfo[0m] [0m[36mTests: succeeded 2, failed 0, canceled 0, ignored 0, pending 0[0m[0m
-[0m[[0minfo[0m] [0m[32mAll tests passed.[0m[0m
+[0m[[0minfo[0m] [0m[36mTests: succeeded 1, failed 1, canceled 0, ignored 0, pending 0[0m[0m
+[0m[[0minfo[0m] [0m[31m*** 1 TEST FAILED ***[0m[0m
 [0m[[0mdebug[0m] [0mSummary for JUnit not available.[0m
-[0m[[0minfo[0m] [0mPassed: Total 2, Failed 0, Errors 0, Passed 2[0m
-[0m[[0mdebug[0m] [0mPassed tests:[0m
-[0m[[0mdebug[0m] [0m	org.apache.spark.sql.execution.DiskPartitionSuite[0m
+[0m[[31merror[0m] [0mFailed: Total 2, Failed 1, Errors 0, Passed 1[0m
+[0m[[31merror[0m] [0mFailed tests:[0m
+[0m[[31merror[0m] [0m	org.apache.spark.sql.execution.DiskHashedRelationSuite[0m
+[0m[[31merror[0m] [0m(sql/test:[31mtestOnly[0m) sbt.TestsFailedException: Tests unsuccessful[0m
