@@ -68,7 +68,7 @@ private[sql] class DiskPartition (
   def insert(row: Row) = {
     // IMPLEMENT ME
     if (inputClosed)
-      throw new SparkException("Should not inserting rows after closing input")
+      throw new SparkException("Should not insert rows after closing input")
 
     data.add(row)
     if (measurePartitionSize() > blockSize) {
@@ -120,7 +120,7 @@ private[sql] class DiskPartition (
         // IMPLEMENT ME
         var result: Row = null
 
-        // if not at end of iterator OR end of current iterator and there is another chunk 
+        // if not at end of iterator OR end of current iterator and there is another chunk
         if (currentIterator.hasNext || (!currentIterator.hasNext && fetchNextChunk()))
           result = currentIterator.next()
 
@@ -147,11 +147,11 @@ private[sql] class DiskPartition (
         // IMPLEMENT ME
         var result: Boolean = chunkSizeIterator.hasNext
 
-        if (result) { 
+        if (result) {
           byteArray = CS143Utils.getNextChunkBytes(inStream, chunkSizeIterator.next(), byteArray)
           currentIterator = CS143Utils.getListFromBytes(byteArray).iterator.asScala
         }
-              
+
         result
       }
     }
@@ -205,6 +205,10 @@ private[sql] object DiskHashedRelation {
                 size: Int = 64,
                 blockSize: Int = 64000) = {
     // IMPLEMENT ME
-    null
+    val partitions: Array[DiskPartition] = new Array[DiskPartition](size)
+    // hash each partition
+    
+    // return DiskHashedRelation
+    new GeneralDiskHashedRelation(partitions)
   }
 }

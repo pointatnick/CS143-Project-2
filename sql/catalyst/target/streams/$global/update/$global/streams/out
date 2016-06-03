@@ -7,7 +7,7 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies for org.apache.spark#spark-catalyst_2.10;1.3.0-SNAPSHOT [compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-catalyst_2.10;1.3.0-SNAPSHOT->org.scala-lang#scala-compiler;2.10.4 [compile->default(compile)][0m
 [0m[[0minfo[0m] [0mResolving org.scala-lang#scala-compiler;2.10.4 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@aeddf89[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@6b29a87[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.scala-lang#scala-compiler;2.10.4[0m
 [0m[[0mdebug[0m] [0m	found org.scala-lang#scala-compiler;2.10.4 in sbt-chain[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-catalyst_2.10;1.3.0-SNAPSHOT->org.scala-lang#scala-compiler;2.10.4 [compile->runtime][0m
@@ -7025,21 +7025,8 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-catalyst_2.10;1.3.0-SNAPSHOT->org.scalamacros#paradise_2.10.4;2.0.1 [plugin->default(compile)][0m
 [0m[[0minfo[0m] [0mResolving org.scalamacros#paradise_2.10.4;2.0.1 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.scalamacros#paradise_2.10.4;2.0.1 {plugin=[default(compile)]}[0m
-[0m[[0minfo[0m] [0mResolving org.scalamacros#paradise_2.10.4;2.0.1 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain-delegate: Checking cache for: dependency: org.scalamacros#paradise_2.10.4;2.0.1 {plugin=[default(compile)]}[0m
-[0m[[0mdebug[0m] [0m		tried /Users/nhma/.ivy2/local/org.scalamacros/paradise_2.10.4/2.0.1/ivys/ivy.xml[0m
-[0m[[0mdebug[0m] [0m	local: no ivy file found for org.scalamacros#paradise_2.10.4;2.0.1[0m
-[0m[[0mdebug[0m] [0m		tried https://repo1.maven.org/maven2/org/scalamacros/paradise_2.10.4/2.0.1/paradise_2.10.4-2.0.1.pom[0m
-[0m[[0mdebug[0m] [0m	public: found md file for org.scalamacros#paradise_2.10.4;2.0.1[0m
-[0m[[0mdebug[0m] [0m		=> https://repo1.maven.org/maven2/org/scalamacros/paradise_2.10.4/2.0.1/paradise_2.10.4-2.0.1.pom (2.0.1)[0m
-[0m[[0mdebug[0m] [0mdownloading https://repo1.maven.org/maven2/org/scalamacros/paradise_2.10.4/2.0.1/paradise_2.10.4-2.0.1.pom ...[0m
-[0m[[0mdebug[0m] [0m	public: downloading https://repo1.maven.org/maven2/org/scalamacros/paradise_2.10.4/2.0.1/paradise_2.10.4-2.0.1.pom[0m
-[0m[[0mdebug[0m] [0m	public: downloading https://repo1.maven.org/maven2/org/scalamacros/paradise_2.10.4/2.0.1/paradise_2.10.4-2.0.1.pom.sha1[0m
-[0m[[0mdebug[0m] [0msha1 OK for https://repo1.maven.org/maven2/org/scalamacros/paradise_2.10.4/2.0.1/paradise_2.10.4-2.0.1.pom[0m
-[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] org.scalamacros#paradise_2.10.4;2.0.1!paradise_2.10.4.pom(pom.original) (233ms)[0m
-[0m[[0mdebug[0m] [0m		tried /Users/nhma/.ivy2/local/org.scalamacros/paradise_2.10.4/2.0.1/jars/paradise_2.10.4.jar[0m
-[0m[[0mdebug[0m] [0m		tried https://repo1.maven.org/maven2/org/scalamacros/paradise_2.10.4/2.0.1/paradise_2.10.4-2.0.1.jar[0m
-[0m[[0mdebug[0m] [0m	found org.scalamacros#paradise_2.10.4;2.0.1 in public[0m
+[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.scalamacros#paradise_2.10.4;2.0.1[0m
+[0m[[0mdebug[0m] [0m	found org.scalamacros#paradise_2.10.4;2.0.1 in sbt-chain[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-catalyst_2.10;1.3.0-SNAPSHOT->org.scalamacros#paradise_2.10.4;2.0.1 [plugin->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-catalyst_2.10;1.3.0-SNAPSHOT->org.scalamacros#paradise_2.10.4;2.0.1 [plugin->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scalamacros#paradise_2.10.4;2.0.1->org.scala-lang#scala-library;2.10.4 [compile->master(*)][0m
@@ -7209,15 +7196,10 @@
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-tools.testing#test-interface;0.5!test-interface.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.hamcrest#hamcrest-core;1.1!hamcrest-core.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.typesafe.genjavadoc#genjavadoc-plugin_2.10.4;0.8!genjavadoc-plugin_2.10.4.jar[0m
-[0m[[0mdebug[0m] [0m		tried https://repo1.maven.org/maven2/org/scalamacros/paradise_2.10.4/2.0.1/paradise_2.10.4-2.0.1.jar[0m
-[0m[[0minfo[0m] [0mdownloading https://repo1.maven.org/maven2/org/scalamacros/paradise_2.10.4/2.0.1/paradise_2.10.4-2.0.1.jar ...[0m
-[0m[[0mdebug[0m] [0m	public: downloading https://repo1.maven.org/maven2/org/scalamacros/paradise_2.10.4/2.0.1/paradise_2.10.4-2.0.1.jar[0m
-[0m[[0mdebug[0m] [0m	public: downloading https://repo1.maven.org/maven2/org/scalamacros/paradise_2.10.4/2.0.1/paradise_2.10.4-2.0.1.jar.sha1[0m
-[0m[[0mdebug[0m] [0msha1 OK for https://repo1.maven.org/maven2/org/scalamacros/paradise_2.10.4/2.0.1/paradise_2.10.4-2.0.1.jar[0m
-[0m[[0minfo[0m] [0m	[SUCCESSFUL ] org.scalamacros#paradise_2.10.4;2.0.1!paradise_2.10.4.jar (720ms)[0m
+[0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scalamacros#paradise_2.10.4;2.0.1!paradise_2.10.4.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#jline;2.10.4!jline.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.fusesource.jansi#jansi;1.4!jansi.jar[0m
-[0m[[0mdebug[0m] [0m:: resolution report :: resolve 2458ms :: artifacts dl 769ms[0m
+[0m[[0mdebug[0m] [0m:: resolution report :: resolve 3365ms :: artifacts dl 83ms[0m
 [0m[[0mdebug[0m] [0m	report for org.apache.spark#spark-catalyst_2.10;1.3.0-SNAPSHOT compile produced in /Users/nhma/Documents/Classes/CS/143/CS143-Project-2/sql/catalyst/target/resolution-cache/reports/org.apache.spark-spark-catalyst_2.10-compile.xml[0m
 [0m[[0mdebug[0m] [0m	report for org.apache.spark#spark-catalyst_2.10;1.3.0-SNAPSHOT runtime produced in /Users/nhma/Documents/Classes/CS/143/CS143-Project-2/sql/catalyst/target/resolution-cache/reports/org.apache.spark-spark-catalyst_2.10-runtime.xml[0m
 [0m[[0mdebug[0m] [0m	report for org.apache.spark#spark-catalyst_2.10;1.3.0-SNAPSHOT test produced in /Users/nhma/Documents/Classes/CS/143/CS143-Project-2/sql/catalyst/target/resolution-cache/reports/org.apache.spark-spark-catalyst_2.10-test.xml[0m
@@ -7231,5 +7213,5 @@
 [0m[[0mdebug[0m] [0m	report for org.apache.spark#spark-catalyst_2.10;1.3.0-SNAPSHOT docs produced in /Users/nhma/Documents/Classes/CS/143/CS143-Project-2/sql/catalyst/target/resolution-cache/reports/org.apache.spark-spark-catalyst_2.10-docs.xml[0m
 [0m[[0mdebug[0m] [0m	report for org.apache.spark#spark-catalyst_2.10;1.3.0-SNAPSHOT pom produced in /Users/nhma/Documents/Classes/CS/143/CS143-Project-2/sql/catalyst/target/resolution-cache/reports/org.apache.spark-spark-catalyst_2.10-pom.xml[0m
 [0m[[0mdebug[0m] [0m	report for org.apache.spark#spark-catalyst_2.10;1.3.0-SNAPSHOT scala-tool produced in /Users/nhma/Documents/Classes/CS/143/CS143-Project-2/sql/catalyst/target/resolution-cache/reports/org.apache.spark-spark-catalyst_2.10-scala-tool.xml[0m
-[0m[[0mdebug[0m] [0m	resolve done (2458ms resolve - 769ms download)[0m
+[0m[[0mdebug[0m] [0m	resolve done (3365ms resolve - 83ms download)[0m
 [0m[[0minfo[0m] [0mDone updating.[0m
