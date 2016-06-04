@@ -99,6 +99,10 @@ case class PartitionProject(projectList: Seq[Expression], child: SparkPlan) exte
     val keyGenerator = CS143Utils.getNewProjection(projectList, child.output)
 
     // IMPLEMENT ME
+    // partition whole input
+    val partitions = DiskHashedRelation(input, keyGenerator)
+    // read each partition from disk and do in-memory memoization over each
+    // CS143Utils.generateCachingIterator(projectList, child.output)
 
     new Iterator[Row] {
       def hasNext() = {
