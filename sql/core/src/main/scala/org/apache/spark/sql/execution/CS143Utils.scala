@@ -194,12 +194,22 @@ object CachingIteratorGenerator {
 
         def hasNext() = {
           // IMPLEMENT ME
-          false
+          input.hasNext
         }
 
         def next() = {
           // IMPLEMENT ME
-          null
+          val nextInput: Row = input.next
+          val nextUdf = udfProject(nextInput)
+          val nextCacheKeys = cacheKeyProjection(nextInput)
+          val nextPreUdf = preUdfProjection(nextInput)
+          val nextPostUdf = postUdfProjection(nextInput)
+          if (cache.containsKey(nextCacheKeys)) {
+            Row.fromSeq(nextPreUdf ++ cache.get(nextCacheKeys) ++ nextPostUdf)
+          } else {
+            cache.put(nextCacheKeys, nextUdf)
+            Row.fromSeq(nextPreUdf ++ nextUdf ++ nextPostUdf)
+          }
         }
       }
     }
