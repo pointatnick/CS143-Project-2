@@ -41,7 +41,11 @@ class CS143UtilsSuite extends FunSuite {
   test("sequence with 1 UDF") {
     val udf: ScalaUdf = new ScalaUdf((i: Int) => i + 1, IntegerType, Seq(studentAttributes(0)))
     val attributes: Seq[Expression] = Seq() ++ studentAttributes ++ Seq(udf)
-
     assert(CS143Utils.getUdfFromExpressions(attributes) == udf)
+  }
+
+  test("sequence with no UDF") {
+    val attributes: Seq[Expression] = Seq() ++ studentAttributes
+    assert(CS143Utils.getUdfFromExpressions(attributes) == null)
   }
 }

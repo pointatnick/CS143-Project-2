@@ -1,3 +1,4 @@
 #Successful Tests
-#Thu Jun 02 22:24:45 PDT 2016
+#Fri Jun 03 23:04:15 PDT 2016
+org.apache.spark.sql.execution.CS143UtilsSuite=1465020255804
 org.apache.spark.sql.execution.DiskPartitionSuite=1464926775415

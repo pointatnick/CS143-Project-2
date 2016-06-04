@@ -211,7 +211,7 @@ private[sql] object DiskHashedRelation {
     for (i <- 0 until size) {
       partitions(i) = new DiskPartition(i.toString, blockSize)
     }
-    
+
     input.foreach{(row: Row) => {
       val index = keyGenerator(row).hashCode() % size
       partitions(index).insert(row) }
