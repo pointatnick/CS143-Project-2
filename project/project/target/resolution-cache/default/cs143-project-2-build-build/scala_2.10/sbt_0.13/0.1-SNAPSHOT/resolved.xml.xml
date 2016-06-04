@@ -4,7 +4,7 @@
 		module="cs143-project-2-build-build"
 		revision="0.1-SNAPSHOT"
 		status="integration"
-		publication="20160530234230"
+		publication="20160603232839"
 		e:sbtVersion="0.13" e:scalaVersion="2.10"
 	>
 		<description>

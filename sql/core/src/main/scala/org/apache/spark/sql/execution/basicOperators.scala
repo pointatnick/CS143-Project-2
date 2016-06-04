@@ -102,17 +102,33 @@ case class PartitionProject(projectList: Seq[Expression], child: SparkPlan) exte
     // partition whole input
     val partitions = DiskHashedRelation(input, keyGenerator)
     // read each partition from disk and do in-memory memoization over each
-    // CS143Utils.generateCachingIterator(projectList, child.output)
+    
+    val diskPartitionsIterator = partitions.getIterator()
+    var partitionIterator = diskPartitionsIterator.next().getData()
+    var currentIterator = CS143Utils.generateCachingIterator(projectList, child.output)(partitionIterator)
 
     new Iterator[Row] {
       def hasNext() = {
         // IMPLEMENT ME
-        false
+        var result: Boolean = currentIterator.hasNext
+
+        // if end of iterator, check if there are more chunks on disk
+        if (!result) {
+          result = diskPartitionsIterator.hasNext
+        }
+
+        result
       }
 
       def next() = {
         // IMPLEMENT ME
-        null
+        var result: Row = null
+
+        // if not at end of iterator OR at end of current iterator and there is another partition
+        if (currentIterator.hasNext || (!currentIterator.hasNext && fetchNextPartition()))
+          result = currentIterator.next()
+
+        result
       }
 
       /**
@@ -123,7 +139,14 @@ case class PartitionProject(projectList: Seq[Expression], child: SparkPlan) exte
        */
       private def fetchNextPartition(): Boolean  = {
         // IMPLEMENT ME
-        false
+        var result: Boolean = diskPartitionsIterator.hasNext
+
+        if (result) {
+          partitionIterator = diskPartitionsIterator.next().getData()
+          currentIterator = CS143Utils.generateCachingIterator(projectList, child.output)(partitionIterator)
+        }
+
+        result
       }
     }
   }

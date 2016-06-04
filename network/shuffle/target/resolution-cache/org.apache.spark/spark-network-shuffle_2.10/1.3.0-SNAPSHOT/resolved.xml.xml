@@ -4,7 +4,7 @@
 		module="spark-network-shuffle_2.10"
 		revision="1.3.0-SNAPSHOT"
 		status="integration"
-		publication="20160602184305"
+		publication="20160603234313"
 	>
 		<description>
 		spark-network-shuffle
